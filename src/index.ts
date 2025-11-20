@@ -18,6 +18,11 @@ app.use(
     })
 )
 
+
+app.get("/", (req, res) => {
+    res.status(200).send("Welcome to the server")
+})
+
 app.use("/api/v1/auth", authRouter)
 
 app.use("/api/v1/post", postRouter)
@@ -33,6 +38,8 @@ mongoose
     .catch((error) => {
         console.error('Error connecting to MongoDB:', error)
     })
+
+
 
 
 if (process.env.NODE_ENV !== 'production') {
