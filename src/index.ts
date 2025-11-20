@@ -1,4 +1,4 @@
-import express from 'express'
+import express ,{Response} from 'express'
 import mongoose from 'mongoose'
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.router";
@@ -19,7 +19,7 @@ app.use(
 )
 
 
-app.get("/", (req, res) => {
+app.get("/", (req, res:Response) => {
     res.status(200).send("Welcome to the server")
 })
 
